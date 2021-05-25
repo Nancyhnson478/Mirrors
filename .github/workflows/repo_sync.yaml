@@ -10,6 +10,21 @@ on:
         types: repo_sync
 
 jobs:
+    dompling_scripts:
+        runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  persist-credentials: false
+            - name: "dompling_scripts"
+              uses: repo-sync/github-sync@v2
+              with:
+                  source_repo: "https://github.com/dompling/Script.git"
+                  source_branch: "master"
+                  destination_branch: '\(dompling\)-scripts-\(master\)'
+                  github_token: ${{ secrets.PAT }}
+
     chinnkarahoi_jd_scripts:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
