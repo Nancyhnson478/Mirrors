@@ -191,21 +191,6 @@ jobs:
                   destination_branch: '\(ElsaKing\)-DogDog-\(main\)'
                   github_token: ${{ secrets.PAT }}
 
-    monk-coder_dust:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】monk-coder_dust"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/monk-coder/dust.git"
-                  source_branch: "dust"
-                  destination_branch: '\(monk-coder\)-dust\)dust'
-                  github_token: ${{ secrets.PAT }}
-
     panghu999_ningmeng:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
@@ -324,21 +309,6 @@ jobs:
                   source_repo: "https://github.com/whyour/hundun.git"
                   source_branch: "master"
                   destination_branch: '\(whyour\)-hundun-\(master\)'
-                  github_token: ${{ secrets.PAT }}
-
-    whyour_qinglong:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】whyour_qinglong"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/whyour/qinglong.git"
-                  source_branch: "master"
-                  destination_branch: '\(whyour\)-qinglong-\(master\)'
                   github_token: ${{ secrets.PAT }}
 
     SuMaiKaDe_jddockerbot:
