@@ -506,18 +506,3 @@ jobs:
                   source_branch: "main"
                   destination_branch: '\(leifengwl\)-JDRouterPush-\(main\)'
                   github_token: ${{ secrets.PAT }}
-
-    peng4740_Cloud189Checkin-Actions:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】peng4740_Cloud189Checkin-Actions"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/peng4740/Cloud189Checkin-Actions.git"
-                  source_branch: "master"
-                  destination_branch: '\(peng4740\)-Cloud189Checkin-Actions-\(master\)'
-                  github_token: ${{ secrets.PAT }}
