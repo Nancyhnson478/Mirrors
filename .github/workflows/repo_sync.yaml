@@ -191,21 +191,6 @@ jobs:
                   destination_branch: '\(ElsaKing\)-DogDog-\(main\)'
                   github_token: ${{ secrets.PAT }}
 
-    panghu999_ningmeng:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】panghu999_ningmeng"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/panghu999/ningmeng.git"
-                  source_branch: "main"
-                  destination_branch: '\(panghu999\)-ningmeng-\(main\)'
-                  github_token: ${{ secrets.PAT }}
-
     passerby-b_JDDJ:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
