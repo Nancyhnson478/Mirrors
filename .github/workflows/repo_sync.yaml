@@ -10,6 +10,21 @@ on:
         types: repo_sync
 
 jobs:
+    Tartarus2014_script:
+        runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  persist-credentials: false
+            - name: "Tartarus2014_script"
+              uses: repo-sync/github-sync@v2
+              with:
+                  source_repo: "https://github.com/Tartarus2014/Script.git"
+                  source_branch: "master"
+                  destination_branch: '\(Tartarus2014\)-script-\(master\)'
+                  github_token: ${{ secrets.PAT }}
+                  
     dompling_scripts:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
