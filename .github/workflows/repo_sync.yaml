@@ -190,22 +190,6 @@ jobs:
                   destination_branch: '\(iepngs\)-Script-\(master\)'
                   github_token: ${{ secrets.PAT }}
 
-
-    mock_lxk0301_ElsaKing_DogDog:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】ElsaKing_DogDog(虚假lxk0301)"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/ElsaKing/DogDog.git"
-                  source_branch: "main"
-                  destination_branch: '\(ElsaKing\)-DogDog-\(main\)'
-                  github_token: ${{ secrets.PAT }}
-
     passerby-b_JDDJ:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
