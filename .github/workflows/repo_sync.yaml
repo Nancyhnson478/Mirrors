@@ -145,21 +145,6 @@ jobs:
                   destination_branch: '\(evilbutcher\)-Quantumult_X-\(master\)'
                   github_token: ${{ secrets.PAT }}
 
-    age174_feizao:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】age174_feizao"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/age174/-.git"
-                  source_branch: "main"
-                  destination_branch: '\(age174\)---\(main\)'
-                  github_token: ${{ secrets.PAT }}
-
     id77_QuantumultX:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
