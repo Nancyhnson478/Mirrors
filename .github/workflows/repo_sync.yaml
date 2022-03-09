@@ -175,21 +175,6 @@ jobs:
                   destination_branch: '\(iepngs\)-Script-\(master\)'
                   github_token: ${{ secrets.PAT }}
 
-    passerby-b_JDDJ:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  persist-credentials: false
-            - name: "【同步】passerby-b_JDDJ"
-              uses: repo-sync/github-sync@v2
-              with:
-                  source_repo: "https://github.com/passerby-b/JDDJ.git"
-                  source_branch: "main"
-                  destination_branch: '\(passerby-b\)-JDDJ-\(main\)'
-                  github_token: ${{ secrets.PAT }}
-
     photonmang_quantumultX:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
